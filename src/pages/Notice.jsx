@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import { Button } from "../components/Button"
 import { Heading } from "../components/Heading"
 import { InputBox } from "../components/Inputbox"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 
 export const Notice = () => {
+
+    const [title, setTitle] = useState("")
+    const[description, setDescription] = useState("")
+    const navigate = useNavigate()
+
+
    return <div>
     <div className="font-ubuntu flex justify-center gap-5 hover:underline">
                 <Link to={"/events"} smooth="true" duration={500}>Events</Link>
@@ -19,13 +26,24 @@ export const Notice = () => {
            
            <div className="flex justify-center p-10">
            <div className="w-80 flex flex-col gap-2">
-               <InputBox label={"ADD THE NOTICE TITLE"} placeholder={"title"}></InputBox>
-               <InputBox label={"ADD NOTICE"} placeholder={"details"}></InputBox>
+               <InputBox onChange={(e)=>{
+                    setTitle(e.target.value)
+               }} label={"ADD THE NOTICE TITLE"} placeholder={"title"}></InputBox>
+               <InputBox onChange={(e) => {
+                    setDescription(e.target.value)
+               }} label={"ADD NOTICE"} placeholder={"details"}></InputBox>
            </div>
            </div>
    
            <div className="p-5">
-               <Button label={"post"}></Button>
+               <div>NOTICE!!!</div>
+               <Button onClick={ async() => {
+                const response = await axios.post("http://localhost:4000/users/todo", {
+                    title,
+                    description
+                })
+                navigate("/result")
+               }} label={"post"}></Button>
            </div>
    
        </div>
