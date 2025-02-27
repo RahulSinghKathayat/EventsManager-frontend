@@ -36,11 +36,12 @@ export const Notice = () => {
            </div>
    
            <div className="p-5">
-               <div>NOTICE!!!</div>
+               
                <Button onClick={ async() => {
                 const response = await axios.post("http://localhost:4000/users/todo", {
                     title,
-                    description
+                    description,
+                    isNotice: Notice || false
                 })
                 navigate("/result")
                }} label={"post"}></Button>
