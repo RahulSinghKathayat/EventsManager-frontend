@@ -9,6 +9,8 @@ import { Events } from './pages/Events'
 import { Notice } from "./pages/Notice";
 import { Dashboard } from "./pages/Dashboard";
 import { Result } from "./pages/Result";
+import { Signup } from "./pages/Signup";
+import { Signin } from "./pages/Signin";
 function App() {
     return (
       <>
@@ -18,6 +20,8 @@ function App() {
             <Route path="/notice" element={<Notice />}></Route>
             <Route path="/" element={<Dashboard />}></Route>
             <Route path="/result" element={<Result />}></Route>
+            <Route path="signup" element={<Signup />}></Route>
+            <Route path="signin" element={<Signin />}></Route>
           </Routes>
         </BrowserRouter>
       </>
