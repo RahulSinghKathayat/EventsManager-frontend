@@ -1,3 +1,4 @@
+
 import React, { useState } from "react"
 import { Button } from "../components/Button"
 import { Heading } from "../components/Heading"
@@ -44,7 +45,7 @@ export const Notice = () => {
                     isNotice: Notice || false
                 })
                 navigate("/result")
-               }} label={"post"}></Button>
+               }} label={"Post"}></Button>
            </div>
    
        </div>
