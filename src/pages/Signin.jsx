@@ -1,13 +1,18 @@
+
 import React from "react";
 import { useState } from "react";
 import { Heading } from "../components/Heading";
 import { SubHeading } from "../components/Subheading";
 import { InputBox } from "../components/Inputbox";
 import { Button } from "../components/Button";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export function Signin(){
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
+
+    const navigate = useNavigate()
 
     return(
         <div>
@@ -17,12 +22,25 @@ export function Signin(){
             </div>
 
             <div>
-                <InputBox label={"Username"} placeholder={"your username"}></InputBox>
-                <InputBox label={"Password"} placeholder={"your password"}></InputBox>
+                
+                <InputBox onChange={(e) => {
+                    setUsername(e.target.value)
+                }} label={"Username"} placeholder={"your username"}></InputBox>
+                
+                <InputBox onChange={(e) => {
+                    setPassword(e.target.value)
+                }} label={"Password"} placeholder={"your password"}></InputBox>
+
             </div>
 
             <div>
-                <Button label={"Login"}></Button>
+                <Button onClick={ async() => {
+                    const loginUser = await axios.post("http://localhost:4000/users/signin", {
+                        username,
+                        password
+                    })
+                    navigate("/")
+                }} label={"Login"}></Button>
             </div>
         </div>
     )
