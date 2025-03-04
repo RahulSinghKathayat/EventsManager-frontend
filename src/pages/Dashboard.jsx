@@ -10,6 +10,7 @@ export const Dashboard = () => {
                 <li className="hover:underline hover:text-amber-400"><Link to={"/events"}>Events</Link></li>
                 <li className="hover:underline hover:text-amber-400"><Link to={"/notice"}>Notice</Link></li>
                 <li className="hover:underline hover:text-amber-400"><Link to={"/result"}>Result</Link></li>
+                <li className="hover:underline hover:text-amber-400"><Link to={"/quote"}>Quote</Link></li>
             </ul>
 
             <ul className="flex gap-1 w-1/3 justify-end">
