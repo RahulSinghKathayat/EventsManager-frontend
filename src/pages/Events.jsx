@@ -31,10 +31,10 @@ export const Events = () => {
         <div className="font-ubuntu w-full flex justify-center gap-10 items-center">
             <InputBox onChange={(e)=>{
                 setTitle(e.target.value)
-            }} label={"ADD THE EVENT TITLE"} placeholder={"event name"}></InputBox>
+            }} label={"Title"} placeholder={""}></InputBox>
             <InputBox onChange={(e) => {
                 setDescription(e.target.value)
-            }} label={"ADD EVENT'S DESCRIPTION"} placeholder={"event details"}></InputBox>
+            }} label={"Write"} placeholder={""}></InputBox>
         </div>
         </div>
 
