@@ -26,13 +26,13 @@ export const Notice = () => {
            
            
            <div className="flex justify-center p-10">
-           <div className="w-80 flex flex-col gap-2">
+           <div className="font-ubuntu w-full flex justify-center gap-10 items-center">
                <InputBox onChange={(e)=>{
                     setTitle(e.target.value)
-               }} label={"ADD THE NOTICE TITLE"} placeholder={"title"}></InputBox>
+               }} label={"Title"} placeholder={""}></InputBox>
                <InputBox onChange={(e) => {
                     setDescription(e.target.value)
-               }} label={"ADD NOTICE"} placeholder={"details"}></InputBox>
+               }} label={"Details"} placeholder={""}></InputBox>
            </div>
            </div>
    

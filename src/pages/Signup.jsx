@@ -24,11 +24,11 @@ export function Signup(){
                 <div>
                     <InputBox onChange={(e) => {
                         setUsername(e.target.value)
-                    }} label={"Username/Email"} placeholder={"ZmjjKK"}></InputBox>
+                    }} label={"Username/Email"} placeholder={""}></InputBox>
 
                     <InputBox onChange={(e) => {
                         setPassword(e.target.value)
-                    }} label={"Password"} placeholder={"valorant321"}></InputBox>
+                    }} label={"Password"} placeholder={""}></InputBox>
                 </div>
 
                 <div>
