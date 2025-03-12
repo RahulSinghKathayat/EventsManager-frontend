@@ -4,7 +4,7 @@ import { Button } from "../components/Button"
 import axios from "axios";
 
 export function Quote(){
-    const[ quote, setQoute ] = useState("Quote of the day...")
+    const[ quote, setQoute ] = useState("Quote of the day")
     const [ loading, setLoading ] = useState(true)
 
     return (
